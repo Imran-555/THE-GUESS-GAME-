@@ -1,14 +1,18 @@
+
+# importing tkinter
 from tkinter import *
+# importing random
 import random
 num=random.randint(1,50)
 print(num)
 
+# GUI work start here 
 root=Tk()
 root.minsize(500,500)
 root.maxsize(500,500)
 root.title(" BY IMRAN RAEENI")
 
-
+# SETUP for GUI 
 root.config(bg="white")
 l0 = Label(root, text="THE GUESS GAME",font=20)
 l0.place(x=170, y=10)
@@ -20,7 +24,7 @@ count=0
 
 
 
-
+# define sub function :
 def sub():
     global count
     if (int(i.get())!= num):
@@ -28,6 +32,7 @@ def sub():
         count = count + 1
         l2 = Label(root, text=f"COUNTER : {count}", bg="red",font=6)
         l2.place(x=200, y=350)
+        #check wether the number is greater or smaller
         if (int(i.get()) < num):
             l3 = Label(root, text=f"RE-ENTER GREATER THAN {int(i.get())}", bg="yellow",width=33)
             l3.place(x=150, y=280)
